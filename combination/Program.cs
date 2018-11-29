@@ -1,34 +1,28 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ConsoleApp6
+namespace combination
 {
     public static class Program
     {
         static void Main(string[] args)
         {
             List<int> a = new List<int> {1, 2, 3};
-
-            Dictionary<int, string> ball_number_color = new Dictionary<int, string>
+            string colors = "红,红,红,蓝,蓝,蓝,绿,绿,绿";
+            List<string> colorlist = colors.Split(',').ToList();
+            Dictionary<int, string> ball_number_color = new Dictionary<int, string>();
+            for (int i = 0; i < colorlist.Count; i++)
             {
-                {0, "红"},
-                {1, "红"},
-                {2, "红"},
-                {3, "黄"},
-                {4, "黄"},
-                {5, "黄"},
-                {6, "蓝"},
-                {7, "蓝"},
-                {8, "蓝"},
-                {9, "黑"},
-                {10, "白"}
-            };
+                ball_number_color.Add(i, colorlist[i]);
+            }
+
+
             List<Box> boxes = new List<Box>
             {
                 new Box("箱子A", 1, 3),
                 new Box("箱子B", 2, 3),
-                new Box("箱子C", 3, 5)
+                new Box("箱子C", 3, 3)
             };
 
 
